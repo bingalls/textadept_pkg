@@ -1,0 +1,33 @@
+Scripts for packaging TextAdept.
+Build packages, by copying compiled binaries to standard destination directories.
+Follow the directions for your OS below, which will create packages to overwrite
+these same files in those same directories.
+
+MICROSOFT WINDOWS
+Requires InnoSetup from http://www.jrsoftware.org/isdl.php
+
+Open textadept.iss, and check that directories have not changed.
+Edit the version number, and compile.
+
+MAC OS X
+Requires EPM from http://epmhome.org/
+
+Edit version number at top of build-mac.sh
+Running this shell script creates textadept.list
+Running `sudo epm -f pkg textadept` creates a subdirectory with a name like
+"macosx" with your new package.
+
+LINUX-LIKE SYSTEMS
+Requires EPM from http://epmhome.org/
+
+Edit version number at top of build-linux.sh
+Check the bottom of the shell script, to ensure that textadept.desktop and
+ta_48x48.png exist, and that the directories are correct.
+
+Running this shell script creates textadept.list
+Running `sudo epm textadept` creates a subdirectory with a name like "linux"
+with your new package. You may need some command-line flags, such as
+ -a amd64	for 64bit Architecture
+ -f deb		for ubuntu File package
+ 
+

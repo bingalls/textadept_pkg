@@ -1,0 +1,14 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=TextAdept Text Editor
+Name[en_GB]=TextAdept Text Editor
+Name[es]=Editor de textos TextAdept
+Comment=Programming editor
+Comment[en_GB]=Programming editor
+Comment[es]=Edita especializado para programación
+Exec=scite %F
+Terminal=false
+Type=Application
+MimeType=text/plain;
+Icon=/usr/share/pixmaps/ta_48x48.png
+Categories=Application;Development;
