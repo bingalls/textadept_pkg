@@ -1,28 +1,45 @@
 [Setup]
+AppVersion=6.3
+AppVerName=TextAdept v6.3
 ;;AllowNoIcons=yes
+AppContact=mitchell.att.foicica.com
+AppCopyright=© 2007-2013 Mitchell
 AppName=TextAdept
-AppVerName=TextAdept v6.0
 AppPublisher=BIngalls(at)users.sourceforge.net
 AppPublisherURL=https://github.com/bingalls/textadept_pkg/
+;;AppPublisher=Mitchell
+;;AppPublisherURL=http://foicica.com/textadept/
 AppSupportURL=http://foicica.com/textadept/
 AppUpdatesURL=http://foicica.com/textadept/
+ChangesAssociations=yes
+Compression=lzma2/ultra
+DisableWelcomePage=True
 DefaultDirName={pf}\TextAdept
 DefaultGroupName=TextAdept
 ;;DirExistsWarning=no
 DisableFinishedPage=yes
-;;InfoBeforeFile=\usr\share\elisp\emacro\dist\w32\readme.txt
-;;LicenseFile=\usr\share\elisp\emacro\dist\w32\license.txt
-;;SourceDir=\usr\share\elisp\
+InfoBeforeFile=README.md
+LicenseFile=LICENSE
+PrivilegesRequired=poweruser
+;;RestartIfNeededByRun=False
+SetupIconFile=core\images\ta_32x32.ico
+;;SourceDir=\archive
+UninstallDisplayName=TextAdept
+;;VersionInfoVersion=6
+VersionInfoCompany=Mitchell
+VersionInfoCopyright=© 2007-2013 Mitchell
+VersionInfoProductName=TextAdept
+;;VersionInfoProductVersion=6
+
+;;[Languages]
+;;Name: "english"; MessagesFile: "compiler:Default.isl"
 
 [Types]
 Name: "full"; Description: "Full installation"
-Name: "minimal"; Description: "Minimal working installation"
 Name: "custom"; Description: "Custom installation"; Flags: iscustom
+Name: "minimal"; Description: "Minimal working installation"
 
 [Components]
-;;I cannot figure out how to not ignore the first line.
-;;Any Innosetup gurus: send me a fix!
-;;Shells such as bash & perl are best left for dbl click => run
 Types: full; Name: "cpp"; Description: "Associate C .c .cpp .cxx .h .hpp .hxx with TextAdept"
 Types: full; Name: "css"; Description: "Associate CSS .css with TextAdept"
 Types: full; Name: "html"; Description: "Associate HTML .html .htm with TextAdept"
@@ -31,44 +48,51 @@ Types: full; Name: "java"; Description: "Associate Java .java with TextAdept"
 Types: full; Name: "js"; Description: "Associate JavaScript .js with TextAdept"
 Types: full; Name: "lua"; Description: "Associate Lua .lua with TextAdept"
 Types: full; Name: "php"; Description: "Associate Php .php with TextAdept"
+Types: full; Name: "python"; Description: "Associate Python .py with TextAdept"
 Types: full; Name: "ruby"; Description: "Associate Ruby .rb .rhtml with TextAdept"
 Types: full; Name: "sql"; Description: "Associate SQL .sql with TextAdept"
 Types: full; Name: "txt"; Description: "Associate Text .txt with TextAdept"
 
 [Registry]
+;;Set EDITOR env var used by git, etc. Deletes on uninstall
+Root: HKLM; Subkey: "SYSTEM\CurrentControlSet\Control\Session Manager\Environment"; ValueType: string; ValueName: "EDITOR"; ValueData: "{app}\textadept.exe"; Flags: uninsdeletevalue;
+
 ;;;;;;;;;;;;;;;;;; File extension part (similar to command line "assoc")
-Root: HKCR; Subkey: ".c"; ValueType: string; ValueName: ""; ValueData: "TextAdeptFile"; Components: cpp;
-Root: HKCR; Subkey: ".cpp"; ValueType: string; ValueName: ""; ValueData: "TextAdeptFile"; Components: cpp;
-Root: HKCR; Subkey: ".cxx"; ValueType: string; ValueName: ""; ValueData: "TextAdeptFile"; Components: cpp;
-Root: HKCR; Subkey: ".h"; ValueType: string; ValueName: ""; ValueData: "TextAdeptFile"; Components: cpp;
-Root: HKCR; Subkey: ".hpp"; ValueType: string; ValueName: ""; ValueData: "TextAdeptFile"; Components: cpp;
-Root: HKCR; Subkey: ".hxx"; ValueType: string; ValueName: ""; ValueData: "TextAdeptFile"; Components: cpp;
-Root: HKCR; Subkey: ".css"; ValueType: string; ValueName: ""; ValueData: "TextAdeptFile"; Components: css;
-Root: HKCR; Subkey: ".html"; ValueType: string; ValueName: ""; ValueData: "TextAdeptFile"; Components: html;
-Root: HKCR; Subkey: ".htm"; ValueType: string; ValueName: ""; ValueData: "TextAdeptFile"; Components: html;
-Root: HKCR; Subkey: ".ini"; ValueType: string; ValueName: ""; ValueData: "TextAdeptFile"; Components: ini;
-Root: HKCR; Subkey: ".cfg"; ValueType: string; ValueName: ""; ValueData: "TextAdeptFile"; Components: ini;
-Root: HKCR; Subkey: ".cf"; ValueType: string; ValueName: ""; ValueData: "TextAdeptFile"; Components: ini;
-Root: HKCR; Subkey: ".config"; ValueType: string; ValueName: ""; ValueData: "TextAdeptFile"; Components: ini;
-Root: HKCR; Subkey: ".conf"; ValueType: string; ValueName: ""; ValueData: "TextAdeptFile"; Components: ini;
-Root: HKCR; Subkey: ".java"; ValueType: string; ValueName: ""; ValueData: "TextAdeptFile"; Components: java;
-Root: HKCR; Subkey: ".js"; ValueType: string; ValueName: ""; ValueData: "TextAdeptFile"; Components: js;
-Root: HKCR; Subkey: ".html"; ValueType: string; ValueName: ""; ValueData: "TextAdeptFile"; Components: html;
-Root: HKCR; Subkey: ".htm"; ValueType: string; ValueName: ""; ValueData: "TextAdeptFile"; Components: html;
-Root: HKCR; Subkey: ".php"; ValueType: string; ValueName: ""; ValueData: "TextAdeptFile"; Components: php;
-Root: HKCR; Subkey: ".lua"; ValueType: string; ValueName: ""; ValueData: "TextAdeptFile"; Components: lua;
-Root: HKCR; Subkey: ".sql"; ValueType: string; ValueName: ""; ValueData: "TextAdeptFile"; Components: sql;
-Root: HKCR; Subkey: ".rb"; ValueType: string; ValueName: ""; ValueData: "TextAdeptFile"; Components: ruby;
-Root: HKCR; Subkey: ".rhtml"; ValueType: string; ValueName: ""; ValueData: "TextAdeptFile"; Components: ruby;
-Root: HKCR; Subkey: ".txt"; ValueType: string; ValueName: ""; ValueData: "TextAdeptFile"; Components: txt;
+Root: HKCR; Subkey: ".c"; ValueType: string; ValueName: ""; ValueData: "TextAdeptFile"; Flags: uninsdeletevalue; Components: cpp;
+Root: HKCR; Subkey: ".cpp"; ValueType: string; ValueName: ""; ValueData: "TextAdeptFile"; Flags: uninsdeletevalue; Components: cpp;
+Root: HKCR; Subkey: ".cxx"; ValueType: string; ValueName: ""; ValueData: "TextAdeptFile"; Flags: uninsdeletevalue; Components: cpp;
+Root: HKCR; Subkey: ".h"; ValueType: string; ValueName: ""; ValueData: "TextAdeptFile"; Flags: uninsdeletevalue; Components: cpp;
+Root: HKCR; Subkey: ".hpp"; ValueType: string; ValueName: ""; ValueData: "TextAdeptFile"; Flags: uninsdeletevalue; Components: cpp;
+Root: HKCR; Subkey: ".hxx"; ValueType: string; ValueName: ""; ValueData: "TextAdeptFile"; Flags: uninsdeletevalue; Components: cpp;
+Root: HKCR; Subkey: ".css"; ValueType: string; ValueName: ""; ValueData: "TextAdeptFile"; Flags: uninsdeletevalue; Components: css;
+Root: HKCR; Subkey: ".html"; ValueType: string; ValueName: ""; ValueData: "TextAdeptFile"; Flags: uninsdeletevalue; Components: html;
+Root: HKCR; Subkey: ".htm"; ValueType: string; ValueName: ""; ValueData: "TextAdeptFile"; Flags: uninsdeletevalue; Components: html;
+Root: HKCR; Subkey: ".ini"; ValueType: string; ValueName: ""; ValueData: "TextAdeptFile"; Flags: uninsdeletevalue; Components: ini;
+Root: HKCR; Subkey: ".cfg"; ValueType: string; ValueName: ""; ValueData: "TextAdeptFile"; Flags: uninsdeletevalue; Components: ini;
+Root: HKCR; Subkey: ".cf"; ValueType: string; ValueName: ""; ValueData: "TextAdeptFile"; Flags: uninsdeletevalue; Components: ini;
+Root: HKCR; Subkey: ".config"; ValueType: string; ValueName: ""; ValueData: "TextAdeptFile"; Flags: uninsdeletevalue; Components: ini;
+Root: HKCR; Subkey: ".conf"; ValueType: string; ValueName: ""; ValueData: "TextAdeptFile"; Flags: uninsdeletevalue; Components: ini;
+Root: HKCR; Subkey: ".java"; ValueType: string; ValueName: ""; ValueData: "TextAdeptFile"; Flags: uninsdeletevalue; Components: java;
+Root: HKCR; Subkey: ".js"; ValueType: string; ValueName: ""; ValueData: "TextAdeptFile"; Flags: uninsdeletevalue; Components: js;
+Root: HKCR; Subkey: ".html"; ValueType: string; ValueName: ""; ValueData: "TextAdeptFile"; Flags: uninsdeletevalue; Components: html;
+Root: HKCR; Subkey: ".htm"; ValueType: string; ValueName: ""; ValueData: "TextAdeptFile"; Flags: uninsdeletevalue; Components: html;
+Root: HKCR; Subkey: ".php"; ValueType: string; ValueName: ""; ValueData: "TextAdeptFile"; Flags: uninsdeletevalue; Components: php;
+Root: HKCR; Subkey: ".py"; ValueType: string; ValueName: ""; ValueData: "TextAdeptFile"; Flags: uninsdeletevalue; Components: python;
+Root: HKCR; Subkey: ".lua"; ValueType: string; ValueName: ""; ValueData: "TextAdeptFile"; Flags: uninsdeletevalue; Components: lua;
+Root: HKCR; Subkey: ".sql"; ValueType: string; ValueName: ""; ValueData: "TextAdeptFile"; Flags: uninsdeletevalue; Components: sql;
+Root: HKCR; Subkey: ".rb"; ValueType: string; ValueName: ""; ValueData: "TextAdeptFile"; Flags: uninsdeletevalue; Components: ruby;
+Root: HKCR; Subkey: ".rhtml"; ValueType: string; ValueName: ""; ValueData: "TextAdeptFile"; Flags: uninsdeletevalue; Components: ruby;
+Root: HKCR; Subkey: ".txt"; ValueType: string; ValueName: ""; ValueData: "TextAdeptFile"; Flags: uninsdeletevalue; Components: txt;
 
 ;;;;;;;;;;;;;;;;;; Common for file associations (similar to command line "ftype")
 ;; File type name:
-Root: HKCR; Subkey: "TextAdeptFile"; ValueType: string; ValueName: ""; ValueData: "TextAdept File"
+Root: HKCR; Subkey: "TextAdeptFile"; ValueType: string; ValueName: ""; ValueData: "TextAdept File"; Flags: uninsdeletekey;
 ;; Default icon:
-Root: HKCR; Subkey: "TextAdeptFile\DefaultIcon"; ValueType: string; ValueName: ""; ValueData: "{app}\textadept.exe,0"
+Root: HKCR; Subkey: "TextAdeptFile\DefaultIcon"; ValueType: string; ValueName: ""; ValueData: "{app}\TextAdept\core\images\ta_32x32.ico"
+;;Use the following, when the icon resource is properly compiled back in:
+;;Root: HKCR; Subkey: "TextAdeptFile\DefaultIcon"; ValueType: string; ValueName: ""; ValueData: "{app}\textadept.exe,0"
 ;; Double clicking:
-Root: HKCR; Subkey: "TextAdeptFile\shell\open\command"; ValueType: string; ValueName: ""; ValueData: "{app}\textadept.exe %1"
+Root: HKCR; Subkey: "TextAdeptFile\shell\open\command"; ValueType: string; ValueName: ""; ValueData: """{app}\textadept.exe"" ""%1"""
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;; END - File Associations
@@ -111,11 +135,8 @@ Source: "themes\dark\*.*"; DestDir: "{app}\themes\dark";
 Source: "themes\light\*.*"; DestDir: "{app}\themes\light";
 Source: "themes\term\*.*"; DestDir: "{app}\themes\term";
 
-;;Quick Launch only works in XP and older?
-;;[Tasks]
-;;Name: "quicklaunchicon"; Description: "Create a &Quick Launch icon"; GroupDescription: "Additional icons:"; Flags: unchecked
-
 [Icons]
-;;Name: "{userappdata}\Microsoft\Internet Explorer\Quick Launch\TextAdept"; Filename: "{app}\textadept.exe"; Tasks: quicklaunchicon
-Name: "{group}\TextAdept"; Filename: "{app}\textadept.exe"
+Name: "{userappdata}\Microsoft\Internet Explorer\Quick Launch\TextAdept"; Filename: "{app}\textadept.exe"; IconFilename: "{app}\TextAdept\core\images\ta_32x32.ico"
+Name: "{group}\TextAdept"; Filename: "{app}\textadept.exe"; IconFilename: "{app}\TextAdept\core\images\ta_32x32.ico"
 Name: "{group}\Uninstall TextAdept"; Filename: "{uninstallexe}"
+Name: "{app}\TextAdept"; Filename: "{app}\TextAdept\core\images\ta_32x32.ico"; WorkingDir: "{app}\TextAdept"; IconFilename: "{app}\TextAdept\core\images\ta_32x32.ico"

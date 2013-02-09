@@ -1,33 +1,54 @@
-Scripts for packaging TextAdept.
-Build packages, by copying compiled binaries to standard destination directories.
-Follow the directions for your OS below, which will create packages to overwrite
-these same files in those same directories.
+# Textadept
 
-MICROSOFT WINDOWS
-Requires InnoSetup from http://www.jrsoftware.org/isdl.php
+## Overview
 
-Open textadept.iss, and check that directories have not changed.
-Edit the version number, and compile.
+Textadept is a fast, minimalist, and ridiculously extensible cross-platform text
+editor for programmers. Written in a combination of C and [Lua][] and
+relentlessly optimized for speed and minimalism over the years, Textadept is an
+ideal editor for programmers who want endless extensibility without sacrificing
+speed or succumbing to code bloat and featuritis.
 
-MAC OS X
-Requires EPM from http://epmhome.org/
+[Lua]: http://lua.org
 
-Edit version number at top of build-mac.sh
-Running this shell script creates textadept.list
-Running `sudo epm -f pkg textadept` creates a subdirectory with a name like
-"macosx" with your new package.
+## Features
 
-LINUX-LIKE SYSTEMS
-Requires EPM from http://epmhome.org/
+* Self-contained executable -- no installation necessary.
+* Entirely keyboard driven.
+* Unlimited split views (GUI version).
+* Support for over 80 programming languages.
+* Powerful snippets and key commands.
+* Code autocompletion and API lookup.
+* Unparalleled extensibility.
 
-Edit version number at top of build-linux.sh
-Check the bottom of the shell script, to ensure that textadept.desktop and
-ta_48x48.png exist, and that the directories are correct.
+## Requirements
 
-Running this shell script creates textadept.list
-Running `sudo epm textadept` creates a subdirectory with a name like "linux"
-with your new package. You may need some command-line flags, such as
- -a amd64	for 64bit Architecture
- -f deb		for ubuntu File package
- 
+In its bid for minimalism, Textadept has no dependencies on Windows and Mac OSX
+operating systems and depends only on [GTK+ 2.0][] version 2.18 or greater on
+Linux. Lua is pre-compiled into Textadept on all platforms and a GTK+ runtime is
+included on Windows and Mac OSX.
 
+The version of Textadept for the terminal requires only [ncurses][].
+
+[GTK+ 2.0]: http://gtk.org
+[ncurses]: http://invisible-island.net/ncurses/ncurses.html
+
+## Download
+
+Download Textadept from the project's [download page][].
+
+[download page]: http://foicica.com/textadept/download
+
+## Installation and Usage
+
+Textadept comes with a comprehensive manual and API documentation in the *doc/*
+directory. They are also available [online][].
+
+[online]: http://foicica.com/textadept
+
+## Contact
+
+Contact me by email: mitchell.att.foicica.com.
+
+There is also a [mailing list][].
+
+[mailing list]: http://foicica.com/lists
