@@ -1,0 +1,10 @@
+#!/bin/sh
+#Launches command-line textadept, if X Window unavailable.
+TA_PREFIX='textadept'   #use textadeptjit for more speed & less stability
+
+xhost>/dev/null 2>&1
+if [ $? -eq 0 ];then
+  /usr/share/textadept/$TA_PREFIX $*
+else
+  /usr/share/textadept/$TA_PREFIX-ncurses $*
+fi

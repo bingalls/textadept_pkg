@@ -1,0 +1,12 @@
+%product TextAdept text editor
+%copyright � 2007-2013 by Mitchell
+%vendor Mitchell
+%license LICENSE
+%readme README.md
+%description TextAdept text editor. Light, Lua extensible, cross platform
+%version 6.3
+
+f 755 root root /etc/profile.d/textadept.sh /etc/profile.d/textadept.sh
+f 755 root root /usr/bin/textadept /usr/bin/textadept
+f 644 root root /usr/share/applications/textadept.desktop /usr/share/applications/textadept.desktop
+f 644 root root /usr/share/icons/hicolor/scalable/textadept.svg /usr/share/icons/hicolor/scalable/textadept.svg
