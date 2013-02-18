@@ -10,6 +10,5 @@ Exec=textadept %F
 Terminal=false
 Type=Application
 MimeType=text/plain;
-#Icon=/usr/share/pixmaps/ta_48x48.png
-Icon=/usr/share/pixmaps/textadept.svg
+Icon=/usr/share/icons/hicolor/scalable/textadept.svg
 Categories=Application;Development;

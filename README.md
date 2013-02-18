@@ -14,6 +14,11 @@
   </a><br />
   Currently, the Cygwin tarball lacks setup hints, as this is not an
   online repository. It also requires Gtk and X Window.
+  See
+  <a href="http://www.webupd8.org/2013/02/try-textadept-fast-cross-platform-text.html">
+  http://www.webupd8.org/2013/02/try-textadept-fast-cross-platform-text.html
+  </a>
+  for help on installing future Ubuntu versions from a repository.
 </p>
 </body>
 </html>
