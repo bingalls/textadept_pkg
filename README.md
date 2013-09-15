@@ -2,23 +2,16 @@
 <head><title>textadept_pkg</title></head>
 <body>
 <p>
-  MIT licensed<br />
-  Packages and packaging code to easily install the TextAdept editor.
+  TextAdept text editor, packaged for easy installation!
+  TextAdept is a light programmer editor, easily extensible with Lua.
   More on TextAdept at
   <br />
-  <a href="http://caladbolg.net/textadeptwiki/">
-  http://caladbolg.net/textadeptwiki/
-  </a><br />
-  <a href="http://code.google.com/p/textadept/">
-  http://code.google.com/p/textadept/
-  </a><br />
-  Currently, the Cygwin tarball lacks setup hints, as this is not an
-  online repository. It also requires Gtk and X Window.
-  See
+  <a href="http://foicica.com/textadept/">http://foicica.com/textadept/</a>
+  <br /><br />
+  Ubuntu users benefit from a repository with updates, described at
   <a href="http://www.webupd8.org/2013/02/try-textadept-fast-cross-platform-text.html">
   http://www.webupd8.org/2013/02/try-textadept-fast-cross-platform-text.html
   </a>
-  for help on installing future Ubuntu versions from a repository.
 </p>
 </body>
 </html>
