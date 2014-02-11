@@ -1,9 +1,9 @@
 [Setup]
-AppVersion=6.3
-AppVerName=TextAdept v6.3
+AppVersion=7.1
+AppVerName=TextAdept v7.1
 ;;AllowNoIcons=yes
 AppContact=mitchell.att.foicica.com
-AppCopyright=© 2007-2013 Mitchell
+AppCopyright=© 2007-2014 Mitchell
 AppName=TextAdept
 AppPublisher=BIngalls(at)users.sourceforge.net
 AppPublisherURL=https://github.com/bingalls/textadept_pkg/
@@ -25,11 +25,11 @@ PrivilegesRequired=poweruser
 SetupIconFile=core\images\ta_32x32.ico
 ;;SourceDir=\archive
 UninstallDisplayName=TextAdept
-;;VersionInfoVersion=6
+;;VersionInfoVersion=7
 VersionInfoCompany=Mitchell
-VersionInfoCopyright=© 2007-2013 Mitchell
+VersionInfoCopyright=© 2007-2014 Mitchell
 VersionInfoProductName=TextAdept
-;;VersionInfoProductVersion=6
+;;VersionInfoProductVersion=7
 
 ;;[Languages]
 ;;Name: "english"; MessagesFile: "compiler:Default.isl"
