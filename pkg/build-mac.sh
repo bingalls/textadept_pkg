@@ -8,7 +8,7 @@ fi
 
 cp header.list $INSTALLER
 
-mkepmlist /Applications/textadept.app >> $INSTALLER;
+mkepmlist /Applications/Textadept.app >> $INSTALLER;
 mkepmlist /Applications/ta >> $INSTALLER;
 mkepmlist /usr/local/bin/ta >> $INSTALLER;
 

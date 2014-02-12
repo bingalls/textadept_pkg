@@ -1,10 +1,10 @@
 %product TextAdept text editor
-%copyright � 2007-2013 by Mitchell
+%copyright 2007-2014 by Mitchell
 %vendor http://www.github.com/bingalls/
 %license LICENSE
 %readme README.md
 %description Programmer text editor. Light, Lua extensible, cross platform
-%version 6.6
+%version 7.1
 
 #f 755 root root /etc/profile.d/textadept.sh /etc/profile.d/textadept.sh
 #f 755 root root /usr/bin/textadept /usr/bin/textadept
